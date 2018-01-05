@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo</title>
+	<div >
+	<span>demodemodmoemodmoe</span>
+	<input type="button" name="demo" id="demo"/>
+	</div>
+</head>
+<body>
+</body>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+$("#demo").on('click', function() {
+	var data =  '{"cargoTrackingRequestSOs":[{"documentType":"MAWB","documentPrefix":"157","documentNumber":"33305300"}]}';
+	$.ajax({type:'POST',
+		contentType:"application/json; charset=utf-8",
+		url:'http://www.qrcargo.com/doTrackShipmentsAction',
+		async: false,
+		data: data,
+		 dataType : "jsonp",
+		success:function(res){
+			console.log(res);
+		}
+	});
+})
+
+ 
+</script>
+</html>
