@@ -45,15 +45,17 @@ public class EthiopianAirlineService {
 		
 		Document doc = null;
 		try {
-			doc = Jsoup.connect(requestURL).data(map).post();
+			doc = Jsoup.connect(requestURL).timeout(10000).data(map).post();
 		} catch (IOException e) {
-			e.printStackTrace();
+			System.out.println("<--------error! billNo is --------->" + billNo);
 		}
 		if (null == doc) {
+			System.out.println("<------no detail of billNo ------->" + billNo);
 			return null;
 		}
 		Element detailTr = doc.getElementById("detail");
 		if (null == detailTr) {
+			System.out.println("<------no detail of billNo ------->" + billNo);
 			return null;
 		}
 		Elements trs = detailTr.select("tr:not(:first-child)");

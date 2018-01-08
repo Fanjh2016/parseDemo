@@ -29,6 +29,4 @@ public class LogisticsInfoModel {
 	public String toString() {
 		return "LogisticsInfoModel [billNo=" + billNo + ", gmtDate=" + gmtDate + ", text=" + text + "]";
 	}
-	
-	
 }
