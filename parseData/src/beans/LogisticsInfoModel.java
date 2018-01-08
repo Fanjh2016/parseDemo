@@ -20,6 +20,11 @@ public class LogisticsInfoModel {
 	 */
 	public Date gmtDate;
 	
+	/**
+	 *  状态
+	 */
+	public String status;
+	
 	/** 
 	 * 文本
 	 */
@@ -27,6 +32,7 @@ public class LogisticsInfoModel {
 
 	@Override
 	public String toString() {
-		return "LogisticsInfoModel [billNo=" + billNo + ", gmtDate=" + gmtDate + ", text=" + text + "]";
+		return "LogisticsInfoModel [billNo=" + billNo + ", gmtDate=" + gmtDate + ", status=" + status + ", text=" + text
+				+ "]";
 	}
 }
